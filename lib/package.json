@@ -1,0 +1,22 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "Quiz",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Quiz"
+  ],
+  "author": "Jessica Kilby <jessicakilby@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "matchdep": "^1.0.1"
+  }
+}

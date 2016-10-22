@@ -6,37 +6,38 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<div class="row">
-		<div class="input-group input-group-lg col-xs-6 col-sm-4" id="robot1">
-		  <span class="input-group-addon" id="sizing-addon1">Robot 1</span>
-		  <input type="text" id="name1" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-		  <label>Select Your Robot</label>
-		  <select id="select">
-		  	<option value="aerialDrone">Aerial Drone</option>
-		  	<option value="aerialBipedal">Aerial Bipedal</option>
-		  	<option value="aerialATV">Aerial ATV</option>
-		  	<option value="groundDrone">Ground Drone</option>
-		  	<option value="groundBipedal">Ground Bipedal</option>
-		  	<option value="groundATV">Ground ATV</option>
-		  </select>
-		</div>
-		
-		<div class="input-group input-group-lg col-xs-6 col-sm-4" id="robot2">
-		  <span class="input-group-addon" id="sizing-addon1">Robot 2</span>
-		  <input type="text" id="name2" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-		  <label>Select Your Robot</label>
-		  <select id="select">
-		  	<option value="aerialDrone">Aerial Drone</option>
-		  	<option value="aerialBipedal">Aerial Bipedal</option>
-		  	<option value="aerialATV">Aerial ATV</option>
-		  	<option value="groundDrone">Ground Drone</option>
-		  	<option value="groundBipedal">Ground Bipedal</option>
-		  	<option value="groundATV">Ground ATV</option>
-		  </select>
-		</div>
-	</div>	
-
-	<div id="output"></div>
+	<div class="wrapper">
+		<div class="row">
+			<div class="input-group input-group-lg col-xs-6 col-sm-4" id="robot1">
+			  <span class="input-group-addon" id="sizing-addon1">Robot 1</span>
+			  <input type="text" id="name1" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+			  <label>Select Your Robot</label>
+			  <select id="select" class="selectpicker">
+			  	<option value="aerialDrone">Aerial Drone</option>
+			  	<option value="aerialBipedal">Aerial Bipedal</option>
+			  	<option value="aerialATV">Aerial ATV</option>
+			  	<option value="groundDrone">Ground Drone</option>
+			  	<option value="groundBipedal">Ground Bipedal</option>
+			  	<option value="groundATV">Ground ATV</option>
+			  </select>
+			</div>
+			
+			<div class="input-group input-group-lg col-xs-6 col-sm-4" id="robot2">
+			  <span class="input-group-addon" id="sizing-addon1">Robot 2</span>
+			  <input type="text" id="name2" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+			  <label>Select Your Robot</label>
+			  <select id="select" class="selectpicker">
+			  	<option value="aerialDrone">Aerial Drone</option>
+			  	<option value="aerialBipedal">Aerial Bipedal</option>
+			  	<option value="aerialATV">Aerial ATV</option>
+			  	<option value="groundDrone">Ground Drone</option>
+			  	<option value="groundBipedal">Ground Bipedal</option>
+			  	<option value="groundATV">Ground ATV</option>
+			  </select>
+			</div>
+		</div>	
+	</div>
+	<div id="output"><button class="btn btn-default btn-danger">Attack</button></div>
 
 	
 	<script src="lib/bower_components/jquery/dist/jquery.min.js"></script>

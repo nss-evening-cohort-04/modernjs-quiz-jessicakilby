@@ -1,5 +1,5 @@
 #robot1, #robot2 {
-	border: 1px solid black;
+	border: 3px solid black;
 	background-color: lightblue;
 	border-radius: 20px;
 	padding: 7px;
@@ -14,4 +14,14 @@
 
 #robot2 {
 	margin-left: 5%;
+}
+
+#output {
+	border: 3px solid black;
+	background-color: lightblue; 
+	border-radius: 20px;
+	margin-left: 18%;
+	margin-top: 10%; 
+	width: 70%; 
+	padding: 10px;
 }

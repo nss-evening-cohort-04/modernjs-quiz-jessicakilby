@@ -1,8 +1,10 @@
 "use strict";
 
+// A base Robot function
 function Robot () {
+  this.attackType = null;
   this.baseDamage = Math.floor(Math.random() * 10);
-  this.health = 500;
+  this.health = 0;
   this.weapon = null;
 }
 
@@ -10,57 +12,77 @@ Robot.prototype.attack = function (target) {
   target.health -= this.baseDamage;
 };
 
-function Drone () {
-  this.type = "Drone";
-  this.attackType = "Drone";
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
-Drone.prototype = new Robot();
 
-function Bipedal () {
-  this.type = "Bipedal";
-  this.attackType = "Bipedal";
-}
-Bipedal.prototype = new Robot();
 
-function ATV () {
-  this.type = "ATV";
-  this.attackType = "ATV";
+// Define three robot type functions (e.g. Drone, Bipedal, ATV)
+function Aerial () {
+  this.attackType = "Aerial";
+  this.health = getRandomInt(50, 80);
+  this.damage = 20;
 }
-ATV.prototype = new Robot();
+Aerial.prototype = new Robot();
+
+function Ground () {
+  this.attackType = "Ground";
+  this.health = getRandomInt(60, 120);
+  this.damage = 30;
+}
+Ground.prototype = new Robot();
+
 
 //Aerial Robots: Drone, Bipedal, ATV
 function AerialDrone () {
-	this.baseDamage += 5;
+  this.type = "Drone";
+  this.baseDamage += 5;
 }
-AerialDrone.prototype = new Drone();
+AerialDrone.prototype = new Aerial();
 
 function AerialBipedal () {
+  this.type = "Bipedal";
 	this.baseDamage += 10;
 }
-AerialBipedal.prototype = new Bipedal();
+AerialBipedal.prototype = new Aerial();
 
 function AerialATV () {
+  this.type = "ATV";
 	this.baseDamage += 15;
 }
-AerialATV.prototype = new ATV();
+AerialATV.prototype = new Aerial();
 
 //Ground Robots: Drone, Bipedal, ATV
 function GroundDrone () {
+  this.type = "Drone";
 	this.baseDamage += 12;
 }
-GroundDrone.prototype = new Drone();
+GroundDrone.prototype = new Ground();
 
 function GroundBipedal () {
+  this.type = "Bipedal";
 	this.baseDamage += 17;
 }
-GroundBipedal.prototype = new Bipedal();
+GroundBipedal.prototype = new Ground();
 
 function GroundATV () {
+  this.type = "ATV";
 	this.baseDamage += 22;
 }
-GroundATV.prototype = new ATV();
+GroundATV.prototype = new Ground();
 
-console.log("Robot", Robot);
+
+// GroundBipedal.prototype.attack(GroundATV);
+var Jess = new GroundATV();
+var smaug = new GroundBipedal();
+console.log("Jess health", Jess.health);
+console.log("smaug health", smaug.health);
+
+smaug.attack(Jess);
+console.log("Jess health", Jess.health);
+console.log("smaug health", smaug.health);
 
 const outputDiv = $("#output");
 let output = '<p>outputDiv</p>';

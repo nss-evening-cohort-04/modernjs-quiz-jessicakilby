@@ -27,3 +27,9 @@ body {
 	height: 35%;
 	padding: 10px;
 }
+
+#selectResult {
+	border: 1px solid black;
+	clear: all;
+	text-align: center;
+}

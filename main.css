@@ -30,6 +30,8 @@ body {
 
 #selectResult {
 	border: 1px solid black;
+	border-radius: 20px;
+	background-color: white;
 	clear: all;
 	text-align: center;
 }

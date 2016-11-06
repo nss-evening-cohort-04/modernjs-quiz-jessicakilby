@@ -25,15 +25,15 @@ function getRandomInt(min, max) {
 //5. Give each robot model a different range of health
 function Aerial () {
   this.attackType = "Aerial";
-  this.health = getRandomInt(50, 80);
-  this.damage = 20;
+  this.health = 50 + getRandomInt(50, 80);
+  this.damage = getRandomInt(10, 20);
 }
 Aerial.prototype = new Robot();
 
 function Ground () {
   this.attackType = "Ground";
-  this.health = getRandomInt(60, 120);
-  this.damage = 30;
+  this.health = 30 + getRandomInt(60, 120);
+  this.damage = getRandomInt(15, 25);
 }
 Ground.prototype = new Robot();
 
@@ -89,33 +89,52 @@ GroundATV.prototype = new Ground();
 
 $(document).ready(function(){
 
-  let showSelection = $("#selectResult");  
-  let outputDiv = $("#output");
-  let submitBtn = $("#submit");
-  let attackBtn = $("#attack");
+  const showSelection = $("#selectResult");  
+  const outputDiv = $("#output");
+  const submitBtn = $("#submit");
+  const attackBtn = $("#attack");
+  let player1;
+  let player2;
+  let name1;
+  let name2;
+  const select1 = $("#select1");
+  const select2 = $("#select2");
+
   submitBtn.click(createPlayer);
   attackBtn.click(attack);
 
   function createPlayer () {
     event.preventDefault();
-    let name1 = $("#name1").val();
-    let name2 = $("#name2").val();
-    let select1 = $("#select1").val();
-    let select2 = $("#select2").val();
-
-    console.log("select1", select1.id());
+    name1 = $("#name1").val();
+    name2 = $("#name2").val();
+    player1 = new window[select1.val()]();
+    player2 = new window[select2.val()]();
+    console.log("player1", player1);
+    console.log("player2", player2);
     
-    let output = `<p>${name1} is a ${select1} robot and starts with ${select1.health} health.</p>`;
-    output += `<p>${name2} is a ${select2} robot and starts with ${select2.health} health.</p>`;
+    let output = `<p>${name1} is a/an ${player1.name} robot and starts with ${player1.health} health and ${player1.damage} damage.</p>`;
+    output += `<p>${name2} is a/an ${player2.name} robot and starts with ${player2.health} health and ${player2.damage} damage.</p>`;
     showSelection.append(output);
   }
 
   function attack (target) {
-    target.health -= this.damage;
+    console.log("name1", name1);
+    // target.health -= this.damage;
+    player1.health -= player2.damage;
+    player2.health -= player1.damage;
 
-    let output = `<p>fighting happens here</p>`;
-    outputDiv.append(output);
-  };
+    if(player1.health>0 && player2.health>0){
+      let output = `<p>${name1}, a/an ${player1.name} robot, now has ${player1.health} health.</p>`;
+      output += `<p>${name2}, a/an ${player2.name} robot, now has ${player2.health} health.</p>`;
+      outputDiv.append(output);
+    }else if(player2.health<0){
+      let output = `<p>${name1}: ${player1.name} robot WON and DEFEATED ${name2}: ${player2.name}! Bwahahahaha!!!`;
+      outputDiv.append(output);
+    }else{
+      let output = `<p>${name2}: ${player2.name} robot WON and DEFEATED ${name1}: ${player1.name}! Bwahahahaha!!!`;
+      outputDiv.append(output);
+    }
+  }
 
 
 });

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>modernjs-quiz</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="robotWrapper">
+		<div class="row">
+			<div class="input-group input-group-lg col-xs-6 col-sm-4" id="robot1">
+			  <span class="input-group-addon" id="sizing-addon1">Robot 1</span>
+			  <input type="text" id="name1" class="form-control" placeholder="Enter Robot 1 Name" aria-describedby="sizing-addon1">
+			  <label>Select Your Robot</label>
+
+			  <select id="select1" class="selectpicker">
+			  	<option value="AerialDrone">Aerial Drone</option>
+			  	<option value="AerialBipedal">Aerial Bipedal</option>
+			  	<option value="AerialATV">Aerial ATV</option>
+			  	<option value="GroundDrone">Ground Drone</option>
+			  	<option value="GroundBipedal">Ground Bipedal</option>
+			  	<option value="GroundATV">Ground ATV</option>
+			  </select>
+			</div>
+			
+			<div class="input-group input-group-lg col-xs-6 col-sm-4" id="robot2">
+			  <span class="input-group-addon" id="sizing-addon1">Robot 2</span>
+			  <input type="text" id="name2" class="form-control" placeholder="Enter Robot 2 Name" aria-describedby="sizing-addon1">
+			  <label>Select Your Robot</label>
+			  
+			  <select id="select2" class="selectpicker">
+			  	<option value="AerialDrone" id="AerialDrone">Aerial Drone</option>
+			  	<option value="AerialBipedal">Aerial Bipedal</option>
+			  	<option value="AerialATV">Aerial ATV</option>
+			  	<option value="GroundDrone">Ground Drone</option>
+			  	<option value="GroundBipedal">Ground Bipedal</option>
+			  	<option value="GroundATV">Ground ATV</option>
+			  </select>
+			</div>
+			<div id="selectResult">
+				<button type="submit" id="submit" class="btn btn-default">Done With Selection</button>
+			</div>	
+		</div>	
+	</div>
+	<div id="output"><button id="attack" class="btn btn-default btn-danger">Attack</button></div>
+
+	
+	<script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
+</body>
+</html>
+
+
